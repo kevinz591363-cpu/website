@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#6d5dfc"/><stop offset="1" stop-color="#16c6a3"/></linearGradient></defs>
+  <polygon points="110,8 184,50 204,126 153,193 68,201 16,139 31,58" fill="url(#g)"/>
+  <polygon points="110,23 173,59 190,123 147,180 76,186 31,134 44,67" fill="#0f1730" opacity=".28"/>
+  <text x="110" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="800" fill="white">KZ</text>
+</svg>

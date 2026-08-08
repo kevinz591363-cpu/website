@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Kevin Zhang's Super Cool Website — interactive mini apps built with HTML, CSS and JavaScript." />
+  <title>Super Cool Website | Kevin Zhang</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="brand-wrap">
+      <img class="profile" src="assets/kz-profile.svg" alt="KZ profile logo" />
+      <div><p class="eyebrow">KEVIN ZHANG PRESENTS</p><h1>Super Cool Website</h1><p class="tagline">Six interactive labs + three bonus mini tools. Explore, play, learn, and build.</p></div>
+    </div>
+    <nav aria-label="Page sections">
+      <a href="#particle">Particle Lab</a><a href="#homework">Homework</a><a href="#timer">Timer</a><a href="#reaction">Reaction</a><a href="#geometry">Geometry</a><a href="#gallery">Gallery</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="card" id="particle">
+      <div class="card-head"><span class="number">01</span><div><h2>Particle Simulation</h2><p>Play with bouncing particles.</p></div></div>
+      <canvas id="particleCanvas" width="640" height="360" aria-label="Particle simulation"></canvas>
+      <div class="controls"><button id="particleToggle">Pause</button><button id="particleBurst">Add 15</button><button id="particleClear" class="ghost">Reset</button><label>Gravity <input id="gravity" type="range" min="0" max="1" step="0.02" value="0.16"></label></div>
+    </section>
+
+    <section class="card" id="homework">
+      <div class="card-head"><span class="number">02</span><div><h2>Homework Tracker</h2><p>Your smart to-do list.</p></div></div>
+      <form id="taskForm" class="inline-form"><input id="taskInput" maxlength="90" placeholder="Add a homework task…" required><button>Add</button></form>
+      <div class="progress"><span id="taskProgress">0 of 0 complete</span><button id="clearDone" class="text-btn" type="button">Clear finished</button></div>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+    <section class="card" id="timer">
+      <div class="card-head"><span class="number">03</span><div><h2>Study Timer</h2><p>Time for studying — or any other purpose.</p></div></div>
+      <div class="timer-ring"><div><span id="timerDisplay">25:00</span><small id="timerStatus">READY</small></div></div>
+      <div class="controls center"><button id="timerStart">Start</button><button id="timerReset" class="ghost">Reset</button><select id="timerPreset" aria-label="Timer length"><option value="300">5 min</option><option value="600">10 min</option><option value="1500" selected>25 min</option><option value="2700">45 min</option></select></div>
+    </section>
+
+    <section class="card" id="reaction">
+      <div class="card-head"><span class="number">04</span><div><h2>Reaction Game</h2><p>Test your reaction speed and aim.</p></div></div>
+      <div id="reactionArena" class="reaction-arena" role="button" tabindex="0" aria-label="Reaction game area"><div id="reactionMessage">Press <b>Start Round</b>, then wait for the target.</div><button id="target" class="target" aria-label="Reaction target">⚡</button></div>
+      <div class="reaction-stats"><span>Latest: <b id="latestReaction">—</b></span><span>Best: <b id="bestReaction">—</b></span><button id="reactionStart">Start Round</button></div>
+    </section>
+
+    <section class="card" id="geometry">
+      <div class="card-head"><span class="number">05</span><div><h2>Geometry Visualizer</h2><p>Play with shapes.</p></div></div>
+      <div class="geometry-layout"><canvas id="geometryCanvas" width="500" height="330" aria-label="Geometry drawing"></canvas><div class="geometry-panel"><label>Shape<select id="shapeSelect"><option>Circle</option><option>Rectangle</option><option>Triangle</option></select></label><label>Size<input id="shapeSize" type="range" min="35" max="125" value="80"></label><div id="shapeStats" class="stat-box"></div></div></div>
+    </section>
+
+    <section class="card" id="gallery">
+      <div class="card-head"><span class="number">06</span><div><h2>Filterable Gallery</h2><p>Look at cool photos.</p></div></div>
+      <div class="gallery-filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="nature">Nature</button><button class="filter" data-filter="tech">Tech</button><button class="filter" data-filter="space">Space</button></div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <section class="bonus" aria-label="Bonus tools">
+    <article><h3>Click Counter</h3><div class="counter-value" id="countValue">0</div><button id="countBtn">Click me!</button><button id="countReset" class="ghost">Reset</button></article>
+    <article><h3>Change Theme</h3><p>Switch the whole website’s mood.</p><button id="themeBtn">Change Theme</button><p id="themeName" class="tiny">Midnight Neon</p></article>
+    <article><h3>Good Luck Game</h3><p>A just-for-fun virtual luck game — no money or prizes.</p><div class="slot" id="slot">★ ★ ★</div><button id="luckBtn">Test My Luck</button><p id="luckResult" class="tiny">Ready?</p></article>
+  </section>
+
+  <dialog id="galleryModal"><button id="modalClose" aria-label="Close photo">×</button><img id="modalImage" alt="Expanded gallery artwork"><h3 id="modalTitle"></h3><p id="modalText"></p></dialog>
+
+  <footer><img src="assets/kz-profile.svg" alt="" /><div><strong>Kevin Zhang</strong><span>Super Cool Website</span></div><a href="#top">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
